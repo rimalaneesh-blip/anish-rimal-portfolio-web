@@ -8,12 +8,12 @@ interface NavbarProps {
 }
 
 const navItems = [
-  { id: 'hero', label: '01' },
-  { id: 'about', label: '02' },
-  { id: 'skills', label: '03' },
-  { id: 'work', label: '04' },
-  { id: 'experience', label: '05' },
-  { id: 'contact', label: '06' },
+  { id: 'hero', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'work', label: 'Works' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 const Navbar = ({ activeSection, onNavigate }: NavbarProps) => {
@@ -45,7 +45,7 @@ const Navbar = ({ activeSection, onNavigate }: NavbarProps) => {
               <motion.button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
-                className={`mono text-xs tracking-widest transition-all duration-300 ${
+                className={`text-sm tracking-wide transition-all duration-300 ${
                   activeSection === item.id 
                     ? 'text-primary' 
                     : 'text-muted-foreground hover:text-foreground'
@@ -94,7 +94,7 @@ const Navbar = ({ activeSection, onNavigate }: NavbarProps) => {
                     onNavigate(item.id);
                     setIsOpen(false);
                   }}
-                  className={`text-4xl font-light tracking-wider ${
+                  className={`text-3xl font-light tracking-wider ${
                     activeSection === item.id ? 'gradient-text' : 'text-muted-foreground'
                   }`}
                   initial={{ opacity: 0, x: -50 }}

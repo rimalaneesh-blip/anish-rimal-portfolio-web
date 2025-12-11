@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import ring3d from '@/assets/3d-ring.png';
-import sphere3d from '@/assets/3d-sphere.png';
+import ring3d from '@/assets/3d-ring-v2.png';
+import sphere3d from '@/assets/3d-sphere-v2.png';
 
 const FloatingElements = () => {
   const { scrollYProgress } = useScroll();
@@ -16,20 +16,19 @@ const FloatingElements = () => {
         className="absolute right-[5%] top-[15%] w-[200px] h-[200px] md:w-[350px] md:h-[350px]"
         style={{ rotate: ringRotate, scale: ringScale }}
         initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0.9, scale: 1 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
       >
         <img 
           src={ring3d} 
           alt="" 
           className="w-full h-full object-contain mix-blend-screen"
-          style={{ filter: 'drop-shadow(0 0 40px hsl(186 100% 50% / 0.4))' }}
         />
       </motion.div>
 
       {/* Floating Sphere */}
       <motion.div
-        className="absolute left-[3%] bottom-[25%] w-[120px] h-[120px] md:w-[200px] md:h-[200px]"
+        className="absolute left-[3%] bottom-[25%] w-[150px] h-[150px] md:w-[220px] md:h-[220px]"
         style={{ y: sphereY }}
         animate={{
           y: [0, -30, 0],
@@ -45,7 +44,6 @@ const FloatingElements = () => {
           src={sphere3d} 
           alt="" 
           className="w-full h-full object-contain mix-blend-screen"
-          style={{ filter: 'drop-shadow(0 0 30px hsl(270 80% 60% / 0.4))' }}
         />
       </motion.div>
 
@@ -79,7 +77,7 @@ const FloatingElements = () => {
         <div className="w-full h-full rounded-full border border-secondary/40" />
       </motion.div>
 
-      {/* Additional small elements */}
+      {/* Glowing orbs */}
       <motion.div
         className="absolute left-[40%] top-[20%] w-6 h-6"
         animate={{
