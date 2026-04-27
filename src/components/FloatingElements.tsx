@@ -26,27 +26,6 @@ const FloatingElements = () => {
         />
       </motion.div>
 
-      {/* Floating Sphere */}
-      <motion.div
-        className="absolute left-[3%] bottom-[25%] w-[150px] h-[150px] md:w-[220px] md:h-[220px]"
-        style={{ y: sphereY }}
-        animate={{
-          y: [0, -30, 0],
-          rotate: [0, 10, -10, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      >
-        <img 
-          src={sphere3d} 
-          alt="" 
-          className="w-full h-full object-contain mix-blend-screen"
-        />
-      </motion.div>
-
       {/* Abstract floating shapes */}
       <motion.div
         className="absolute right-[25%] bottom-[15%] w-16 h-16 opacity-30"
