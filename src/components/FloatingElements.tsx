@@ -1,12 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ring3d from '@/assets/3d-ring-v2.png';
-import sphere3d from '@/assets/3d-sphere-v2.png';
 
 const FloatingElements = () => {
   const { scrollYProgress } = useScroll();
   
   const ringRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  const sphereY = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const ringScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.2, 0.8]);
 
   return (
