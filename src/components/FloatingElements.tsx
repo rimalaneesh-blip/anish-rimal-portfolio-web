@@ -1,12 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ring3d from '@/assets/3d-ring-v2.png';
-import sphere3d from '@/assets/3d-sphere-v2.png';
 
 const FloatingElements = () => {
   const { scrollYProgress } = useScroll();
   
   const ringRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  const sphereY = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const ringScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.2, 0.8]);
 
   return (
@@ -21,27 +19,6 @@ const FloatingElements = () => {
       >
         <img 
           src={ring3d} 
-          alt="" 
-          className="w-full h-full object-contain mix-blend-screen"
-        />
-      </motion.div>
-
-      {/* Floating Sphere */}
-      <motion.div
-        className="absolute left-[3%] bottom-[25%] w-[150px] h-[150px] md:w-[220px] md:h-[220px]"
-        style={{ y: sphereY }}
-        animate={{
-          y: [0, -30, 0],
-          rotate: [0, 10, -10, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      >
-        <img 
-          src={sphere3d} 
           alt="" 
           className="w-full h-full object-contain mix-blend-screen"
         />
